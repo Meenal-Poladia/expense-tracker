@@ -8,7 +8,7 @@ function Expenses(props) {
    const [selectedYear, setSelectedYear] = useState("2020");
 
    const filteredList = props.items.filter(item => item.date.getFullYear() == selectedYear);
-
+// Watch the video no.66 again and write the new code
    const selectChangeHandler = (selectedYear) => {
       setSelectedYear(selectedYear);
     }
@@ -16,8 +16,11 @@ function Expenses(props) {
     return (
         <div>
             <Card className="expenses">
-                <ExpensesFilter selectedYear={selectedYear} onSelectedChange = {selectChangeHandler}/>
-                {filteredList.map(expense => (
+                <ExpensesFilter selectedYear={selectedYear}
+                                onSelectedChange = {selectChangeHandler}/>
+                {filteredList.length === 0 && <p> No Expense found </p>}
+                {filteredList.length > 0 &&
+                filteredList.map(expense => (
                     <ExpenseItem key = {expense.id}
                                  title = {expense.title}
                                  amount = {expense.amount}
