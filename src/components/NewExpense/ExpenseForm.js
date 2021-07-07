@@ -1,5 +1,7 @@
 import "./ExpenseForm.css";
 import {useState} from "react";
+import "./NewExpense";
+
 
 const ExpenseForm = (props) => {
     //For method 1.
@@ -70,6 +72,7 @@ const ExpenseForm = (props) => {
         setEnteredTitle("");
         setEnteredAmount("");
         setEnteredDate("");
+        props.onCancel();
     };
     return(
         <form onSubmit={submitHandler}>
@@ -88,7 +91,8 @@ const ExpenseForm = (props) => {
                 </div>
             </div>
             <div className="new-expense__actions">
-                <button > Add Expense</button>
+                <button type="button" onClick={props.onCancel}> Cancel </button>
+                <button> Add Expense </button>
             </div>
         </form>
     )
