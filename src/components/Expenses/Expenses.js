@@ -15,13 +15,11 @@ function Expenses(props) {
     }
 
     return (
-        <div>
-            <Card className="expenses">
-                <ExpensesFilter selectedYear={selectedYear}
-                                onSelectedChange = {selectChangeHandler}/>
-                <ExpenseList items={filteredList} />
-            </Card>
-        </div>
+        <Card className="expenses">
+            <ExpensesFilter selectedYear={selectedYear}
+                            onSelectedChange = {selectChangeHandler}/>
+            <ExpenseList items={filteredList} />
+        </Card>
     )
 }
 

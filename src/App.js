@@ -1,6 +1,8 @@
+import {useState} from "react";
+
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
-import {useState} from "react";
+import backgroundImage from "./images/background.jpg";
 
 const dummyExpenses = [
     {
@@ -32,10 +34,15 @@ function App() {
         })
     }
     return (
-        <div>
-            <NewExpense onAddExpense={addExpenseHandler}/>
-            <Expenses items={expenses}/>
-        </div>
+        <>
+            <div className='background-container'>
+                <img src={backgroundImage} alt="backgroundImage" className='background-image'/>
+            </div>
+            <div className='tracker-container'>
+                <NewExpense onAddExpense={addExpenseHandler}/>
+                <Expenses items={expenses}/>
+            </div>
+        </>
     );
 }
 
