@@ -6,7 +6,7 @@ import ExpenseList from "./ExpenseList";
 import {useState} from "react";
 
 function Expenses(props) {
-   const [selectedYear, setSelectedYear] = useState("2020");
+   const [selectedYear, setSelectedYear] = useState("2022");
 
    const filteredList = props.items.filter(item => item.date.getFullYear() == selectedYear);
 // Watch the video no.66 again and write the new code
